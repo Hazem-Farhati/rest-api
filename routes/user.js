@@ -33,7 +33,7 @@ userRouter.post("/add", async (req, res) => {
 userRouter.put("/update/:id", async (req, res) => {
   try {
     let result = await User.findByIdAndUpdate(
-      { id: req.params.id },
+      { _id: req.params.id },
       { $set: { ...req.body } },
     );
     res.send({ newUser: result, msg: "user updated" });
