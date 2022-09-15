@@ -1,13 +1,14 @@
-const express=require("express");
-const app=express();
+const express = require("express");
+const app = express();
 
-const db_connect=require("./config/db_connect");
+const db_connect = require("./config/db_connect");
 require("dotenv").config();
 db_connect();
 
 app.use(express.json());
 
-app.use("/user",require('./routes/user'));
+app.use("/user ", require("./routes/user"));
 
-app.listen(process.env.PORT,err=>err?console.log(err):console.log('server mriguel'));
-
+app.listen(process.env.PORT, (err) =>
+  err ? console.log(err) : console.log("server mriguel")
+);
